@@ -46,7 +46,7 @@ contract charity {
 
         require(msg.sender != address(0), "address zero not allowed");
 
-        require(_goal > 0, "goal can't o");
+        require(_goal > 0, "goal can't be 0");
         require(_starttime >= block.timestamp && _endtime > _starttime, "start time must be a date in the future");
 
         uint256 _currentProjectId = currentProjectId.current();
@@ -69,16 +69,15 @@ contract charity {
         emit projectCreated(_currentProjectId, msg.sender, _goal);
     }
 
-    function contribute()
+    function contribute() public {}
 
-    function getAllProjects()
+    function getAllProjects() public view returns(uint256[] memory) {
+        return allProjectsArray;
+    }
 
-    function getClosedProjects()
+    function getClosedProjects() public {}
 
-    function receiveContribution()
+    function receiveContribution() public {}
 
-    function setCharityTokenAddress()
-
-
-
+    function setCharityTokenAddress() public {}
 }

@@ -1,8 +1,9 @@
 // SPDX-License-Identifier: SEE LICENSE IN LICENSE
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.19;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
+
 import "../interface/interface.sol";
 
 
@@ -39,7 +40,7 @@ contract charityRewardToken is ERC20, Ownable {
         return 18;
     }
 
-    function getMaxSupply() public views returns (uint256) {
+    function getMaxSupply() public view returns (uint256) {                                                                                                         
         return MAX_SUPPLY;
     }
 
